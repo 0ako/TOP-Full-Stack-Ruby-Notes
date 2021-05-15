@@ -13,7 +13,7 @@
 # :: is used as a namespace
 # # is used as a comment
 
-# Common String Methods (#Instance methods)
+# COMMON STRING METHODS (#INSTANCE METHODS)
 #capitalize 
     "hello".capitalize #=> "Hello"
 #include?
@@ -42,6 +42,7 @@
 "hello world".delete("l") #=> "heo word"
 "!".prepend("hello, ", "world") #=> "hello world!"
 
+# NUMBER/STRING CONVERSION METHODS
 5.to_s #=> "5"
 nil.to_s #=> ""
 :symbol.to_s #=> "symbol"
@@ -52,7 +53,8 @@ nil.to_s #=> ""
 '4'.to_f #=> 4.0
 '4 hi there'.to_f #=> 4.0
 'hi there 4'.to_f #=> 0.0
-
+    
+# If the operands are all integers, the result will be an integer
 
 #Strings can be changed, so every time a string is used, Ruby has to store it in memory even if an existing string with the same value already exists. 
 #Symbols are stored in memory only once, making them faster in certain situations.
@@ -69,7 +71,7 @@ nil.to_s #=> ""
 x = nil            # nil literal used here
 "Hello World".nil? #=> false
 #nil can be used in a conditional statement, and will be treated as false. 
-nil == false #=> false #a importantant caveat. while both are treated as negative when evaluated in an expression, they are not equivalent.
+nil == false #=> false #an important caveat. while both are treated as negative when evaluated in an expression, they are not equivalent.
 
 # In modulo expressions, the value to the left of the % is called the quotient, and the value to the right is called the modulus.
 
@@ -123,6 +125,7 @@ nil == false #=> false #a importantant caveat. while both are treated as negativ
 #2. 
 thousands = 4321 / 1000
 hundreds = 4321 % 1000 / 100 #4321 / 100 % 10
+        a.remainder(1000)/100
 tens = 4321 % 100 / 10 #4321 / 10 % 10
 ones = 4321 % 10
 
@@ -142,8 +145,28 @@ movies = { jaws: 1975, #hash element reference
 # puts movies[:anchorman]
 # puts movies[:man_of_steel]
 # puts movies[:a_beautiful_mind]
+
 # puts movies[:the_evil_dead]
+1981
+=> nil
+
+# movies[:the_evil_dead]
+=> 1981
 
 #4
 dates = [1975, 2004, 2013, 2001, 1981]
 puts dates[0, 5] #array element reference
+
+# Reviewed to here 4/21
+
+#https://codelikethis.com/lessons/learn-to-code/objects
+#Dot is the most powerful operator
+2 + 7
+#is the same as 
+2. + 7
+# Both send the message + to the object 2.
+
+"apple".upcase
+=> "APPLE"
+
+#RSpec is a popular ruby testing framework
