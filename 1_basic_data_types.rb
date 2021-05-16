@@ -13,6 +13,8 @@
 # :: is used as a namespace
 # # is used as a comment
 
+# https://launchschool.com/books/ruby/read/basics
+
 # COMMON STRING METHODS (#INSTANCE METHODS)
 #capitalize 
     "hello".capitalize #=> "Hello"
@@ -65,19 +67,24 @@ nil.to_s #=> ""
 "string".object_id == "string".object_id #=> false # The #object_id method returns an integer identifier for an object.
 :symbol.object_id == :symbol.object_id # true
 
-#Basically, a symbol is used when you want to reference something like a string but don't ever intend to print it to the screen or change it. It is often referred to as an immutable (i.e. unchangeable) string.
+#Basically, a symbol is used when you want to reference something like a string but don't ever intend to print it to the screen or change it. It is often referred to as an IMMUTABLE (i.e. unchangeable) string.
 
-#Nil
+# Everytime we enter something into irb we get => "hash rocket" back, followed by whatever our expression returns.
+# An expression is anything that can be evaluated. Pretty much everything you type into ruby is an expression.
+# An expression always returns something, even if that's an error message or nil.
+# Ruby expressions ALWAYS return a value.
+
+#Nil (Ruby's way of saying 'nothing')
 x = nil            # nil literal used here
 "Hello World".nil? #=> false
 #nil can be used in a conditional statement, and will be treated as false. 
-nil == false #=> false #an important caveat. while both are treated as negative when evaluated in an expression, they are not equivalent.
+nil == false #=> false #an important caveat. while both are treated as negative when evaluated in an expression, they are NOT equivalent.
 
-# In modulo expressions, the value to the left of the % is called the quotient, and the value to the right is called the modulus.
+# In modulo expressions, the value to the LEFT of the % is called the QUOTIENT, and the value to the RIGHT is called the MODULUS.
 
-# Remainder method computes and returns the value of an integer division operation
+# Remainder method - computes and returns the REMAINDER of an integer division operation
 16.remainder(5) #=> 1
-# Divmod method computes both the integer result of the division and its modulo value.
+# Divmod method - computes both the INTEGER RESULT of the division and its MODULO value.
 16.divmod(5) #=> [3, 1]
 
 # Modulo operations return a positive integer when the second operand is positive, and a negative integer when the second operand is negative.
@@ -89,21 +96,22 @@ nil == false #=> false #an important caveat. while both are treated as negative 
 
 #Hashes
 #A hash, sometimes referred to as a dictionary, is a set of key-value pairs. Hash literals are represented with curly braces { }. 
-#A key-value pair is an association where a key is assigned a specific value.
+#A KEY-VALUE pair is an association where a key is assigned a specific value. (Like a javascript object?)
 #A hash consists of a key, usually represented by a symbol, that points to a value (denoted using a =>) of any type of data. 
 
 {:dog => 'barks', :cat => 'meows', :pig => 'oinks'}[:cat] #=> "meows"
 
-#The most important thing to remember about hashes is that you use keys to set or retrieve values.
+# REMEMBER: We use KEYS to set or retrieve values from HASHES.
 
 #Expressions and Return
+# (Repeating ourselves from earlier)
 #When you type something in at the irb prompt you are creating an expression. 
 #An expression is anything that can be evaluated, and pretty much everything you write in Ruby is an expression.
 #Ruby expressions always return a value, even if that value is nil or an error.
 
 #Puts vs Return
-#Puts method prints something to the screen. However, puts does not return what is printed to the screen.
-#Expressions DO something, but they also RETURN something. The value returned is not necessarily the action that was performed.
+#Puts method - prints something to the screen. However, puts does not RETURN what is printed to the screen.
+#Expressions DO something, but they also RETURN something. The value returned is not necessarily the action that was performed. Examples below:
 
 # puts 'stuff'
 # stuff
@@ -119,7 +127,8 @@ nil == false #=> false #an important caveat. while both are treated as negative 
 
 # => nil
 
-#a is assigned to the value returned by puts "stuff", which is nil. Therefore, puts a results in "nil" being printed out. 
+# the variable a is assigned to the value returned by puts "stuff", which is nil. Therefore, puts a results in "nil" being printed out. 
+# (But it prints an empty line, not "nil"??)
 
 #Exercises https://launchschool.com/books/ruby/read/basics
 #2. 
