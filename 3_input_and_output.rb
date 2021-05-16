@@ -1,7 +1,7 @@
-# puts automatically adds a newline at the end of your message
+# puts - appends a newline to the argument passed in
 # puts "hello"
 
-# print - if you don't want a newline
+# print - keeps all things on one line
 # print "hello"
 
 # gets.chomp
@@ -19,7 +19,6 @@ aFile.close
 # File.open
 # File.open method can be used to create a new file object and assign that file object to a file.
 # File.open method can be associated with a block, whereas you cannot do the same using the File.new method.
-
 
 # #sysread method - can be used to read contents of a file. You can open file in any of the modes using method sysread
 # aFile = File.new("input.txt", "r")
@@ -65,7 +64,7 @@ aFile.close
 # IO.foreach("input.txt") {|block| puts block}
 # # The code will pass the contents of the file "test" line by line to the variable block, then display the output on the screen.
 
-# # SKIPPED the following part (until "Paused at this point")
+# # SKIPPED the following part (until "Paused at this point") _______________________________________________________________
 # #rename
 # File.rename("test1.txt", "test2.txt")
 
@@ -87,34 +86,33 @@ aFile.close
 # File::directory?( "usr/local/bin" ) #=> true
 # File::directory?( "file.rb" ) #=> false
 
-# PAUSED at this point because I realized TOP only asked to read the sections on puts, gets, putc, print
+# PAUSED at this point because I realized TOP only asked to read the sections on puts, gets, putc, print ____________________
 
 # https://www.rubyguides.com/2018/10/puts-vs-print/
 # puts treats arrays (as well as strings) in a different way
 
 # puts [1,2]
-# # 1
-# # 2
+# 1
+# 2
 
 # print [1,2]
-# # [1,2]
+# [1,2]
 
-#Both print and puts attempts to convert everything into a string by calling to_s ()
-#trying to puts an array with nil values, it'll show some blank lines
+# Both print and puts attempt to CONVERT everything into a string by calling to_s
+# If we puts an array with nil values, it'll show blank lines
 puts [1,nil,nil,2]
 # 1
 
 
 # 2
 
-#p is a method that shows a more "raw" version of an object
-#Debug output with p : when you're looking for things like (normally invisible) newline characters, or want to make sure some value is correct, use p
-# puts always returns nil
-# p returns the object you pass to it
+# p method - shows a more "RAW" version of an object
+# Useful for debugging output - when you're looking for things like (normally invisible) newline characters, or want to make sure some value is correct, use p
+# puts always returns nil, but p returns the object you pass to it
 # e.g.
-
 puts "Ruby is cool" #=> Ruby is cool
-
 p "Ruby is cool" #=> "Ruby is cool"
 
-# Pretty printing: pp
+# Ruby has yet another printing method
+# called pp - Pretty printing method.
+# Similar to p, but it prints big hashes and arrays in a nicer way. 
