@@ -99,6 +99,14 @@ You can also use while loops to repeatedly ask a question of the user until they
 This shows the flexibility advantage of the while loop. It will run until a break condition is met, 
 which could be for a variable number of loops or a number of loops that is initially known.
 
+x = 0
+while x <= 10
+    if x.odd?
+        puts x
+    end
+    x += 1
+end
+
 UNTIL LOOP____________________________________________________________________________________________________________________________________
 The until loop is the opposite of the while loop. An until loop continues for as long as the condition is false. 
 As much as possible, you should avoid negating your logical expressions using ! (not), as it makes the logic more difficult to reason through.
@@ -125,6 +133,7 @@ end
 puts "Done!"
 
 RANGES____________________________________________________________________________________________________________________________________
+A range is a special type in Ruby that captures a range of elements. 
 What if we know exactly how many times we want our loop to run? Ruby lets us use something called a range to define an interval.
 All we need to do is give Ruby the starting value, the ending value, and whether we want the range to be inclusive or exclusive
 # (1..5) #inclusive range: 1, 2, 3, 4, 5
@@ -132,12 +141,30 @@ All we need to do is give Ruby the starting value, the ending value, and whether
 # ('a'..'d') # we can make ranges of letters, too! a, b, c, d
 
 FOR LOOP____________________________________________________________________________________________________________________________________
-Used to iterate through a collection of information such as an array or range. 
-These loops are useful if you need to do something a given number of times while also using an iterator. 
+# Used to iterate through a collection of information such as an array or range. In otherwords, to loop over a collection of elements.
+# Unlike a while loop where if we're not careful we may cause an infinite loop, for loops have a definite end,
+# since it's looping over a finite number of elements. 
+# It begins with for, followed by a variable, then the in reserved word, then a collection of elements. We'll show this using an array and a range.
+# These loops are useful if you need to do something a given number of times while also using an iterator. 
 
 for i in 0..5
     puts "#{i} wake up!"
 end
+
+# Countup
+x = gets.chomp.to_i
+for i in 1..x do
+  puts i
+end
+puts "Done!"
+
+The odd thing about for loops: it returns the collection of elements after it executes, whereas the earlier while loop examples return nil.
+x = [1, 2, 3, 4, 5]
+for i in x do
+  puts i
+end
+puts "Done!"
+
 
 TIMES LOOP____________________________________________________________________________________________________________________________________
 Used if you need to run a loop a specified number of times. It works by iterating through a loop a specified number of times. 
