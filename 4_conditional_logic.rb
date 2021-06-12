@@ -197,3 +197,4 @@ puts response #=> "Age is just a number"
 However, if the conditional statements are complex, then using an if..else statement would help readability. 
 Remember, above all else,  our code needs to be readable and understandable by other people, especially in the development stage.
 Our code can always be optimized for efficiency once it's finished and we're moving to a production environment where speed matters.
+
