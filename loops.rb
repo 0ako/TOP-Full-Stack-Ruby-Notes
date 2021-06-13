@@ -222,3 +222,74 @@ end
 
 # There are many other iterator methods in Ruby, and over time, you'll get to use a lot of them. 
 # For now, know that most Rubyists prefer to use iterators, like the each method, to loop over a collection of elements.
+
+RECURSION______________________________________________________________________________________________________________________________
+https://launchschool.com/books/ruby/read/loops_iterators#recursion
+
+# Before starting this section on Recursion, you may want to review the material on the call stack from the Methods chapter. 
+# Understanding the call stack will help you better understand recursion.
+
+# Recursion is another way to create a loop in Ruby. Recursion is the act of calling a method from within itself. 
+# That probably sounds confusing so let's look at some actual code to get a better idea.
+
+# Doubler without recursion
+def doubler(start)
+    puts start * 2
+end
+
+# Doubler with recursion
+def doubler(start)
+    puts start
+    if start < 10
+        doubler(start * 2)
+    end
+end
+
+Fibonacci_________________________________________________________________
+# We are using a method that uses recursion to calculate the nth number in the fibonacci sequence. 
+# The fibonacci sequence is a sequence of numbers in which each number is the sum of the previous two numbers in the sequence.
+
+number = gets.chomp.to_i
+
+def fibonacci(number)
+    if number < 2
+        number
+    else
+        fibonacci(number - 1) + fibonacci(number - 2)
+    end
+end
+
+puts fibonacci(number)
+
+# When learning recursion, drawing diagrams can help. We can use a tree like structure to see what is happening.
+
+# Each time the code branches off again you are calling the fibonacci function from within itself two times. 
+# If you take all of those ones and zeros and add them together, you'll get the same answer you get when you run the code. 
+# You can see why computer programs are handy now. 
+# Think if you had to draw that diagram out every time you wanted to know the fibonacci respresentation of a number. Yikes!
+
+# The key concept with recursion is that there is some baseline condition that returns a value, which then "unwinds" the recursive calls. 
+# You can think of the successive recursive calls building up, until some value is returned, and only then can the recursive calls be evaluated.
+
+Summary_________________________________________________________________
+# Loops and iterators are a great way to perform repeated operations on a data set. 
+# Often, in Ruby, you'll find yourself reaching for an iterator before a loop, but not all the time. 
+
+# Recursion, the ability to call a method inside of itself, can also do some powerful operations when solving problems.
+
+Exerises_______________________________________________________________
+
+x = ""
+while x != "STOP" do
+    puts "Type STOP to stop"
+    x = gets.chomp
+end
+
+def countdown(number)
+    if number < 1
+        puts number
+    else 
+        puts number
+        countdown(number - 1)
+    end
+end
