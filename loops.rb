@@ -99,6 +99,10 @@ You can also use while loops to repeatedly ask a question of the user until they
 This shows the flexibility advantage of the while loop. It will run until a break condition is met, 
 which could be for a variable number of loops or a number of loops that is initially known.
 
+Conditionals Within Loops_______________________________________________
+# To make loops more effective and precise, we can add conditional flow control within them to alter their behavior. 
+# Let's use an if statement in a while loop to demonstrate.
+
 x = 0
 while x <= 10
     if x.odd?
@@ -185,3 +189,36 @@ UPTO and DOWNTO LOOPS___________________________________________________________
 
 5.upto(10) {|num| print "#{num} "} #=> 5 6 7 8 9 10
 10.downto(5) {|num| print "#{num} "} #=> 10 9 8 7 6 5
+
+ITERATORS_____________________________________________________________________________________________________________________________________
+# Iterators are methods that naturally loop over a given set of data and allow you to operate on each element in the collection.
+# Arrays are ordered lists. Let's say that you had an array of names and you wanted to print them to the screen. 
+# How could you do that? You could use the each method for arrays, like this:
+
+names = ['Bob', 'Joe', 'Steve', 'Janice', 'Susan', 'Helen']
+names.each { |name| puts name }
+
+# We have called the each method using the dot operator (.) on our array. 
+# What this method does is loop through each element in our array, in order, starting from 'Bob'. 
+# Then it begins executing the code within the block. 
+# The block's starting and ending points are defined by the curly braces { }
+# Each time we iterate over the array, we need to assign the value of the element to a variable. 
+# In this example we have named the variable name and placed it in between two pipes |. 
+# After that, we write the logic that we want to use to operate on the variable, which represents the current array element. 
+# In this case it is simply printing to the screen using puts.
+
+# A block is just some lines of code ready to be executed. When working with blocks there are two styles you need to be aware of. 
+# By convention, we use the curly braces { } when everything can be contained in one line. 
+# We use the words do and end when we are performing multi-line operations. 
+
+# Let's add some functionality to our previous program to try out this do/end stuff.
+
+names = ['Bob', 'Joe', 'Steve', 'Janice', 'Susan', 'Helen']
+x = 1
+names.each do |name|
+  puts "#{x}. #{name}"
+  x += 1
+end
+
+# There are many other iterator methods in Ruby, and over time, you'll get to use a lot of them. 
+# For now, know that most Rubyists prefer to use iterators, like the each method, to loop over a collection of elements.
