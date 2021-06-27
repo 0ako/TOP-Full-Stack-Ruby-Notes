@@ -273,3 +273,35 @@ Ruby does this behind the scenes when you use string interpolation to print an a
 
 In order to get our array to print properly, Ruby is calling the to_s method on our array and adding it into the string.
 
+UNSORTED METHODS BELOW - they are common array methods, should I put them under ITERATING OVER AN ARRAY?_______________________________
+
+https://launchschool.com/books/ruby/read/arrays#each_index
+The each_index method iterates through the array much like the each method, however the variable represents the index number as opposed to 
+the value at each index. It passes the index of the element into the block and you may do as you please with it. The original array is returned.
+
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_index { |i| puts "This is index #{i}" }
+This is index 0
+This is index 1
+This is index 2
+This is index 3
+This is index 4
+=> [1, 2, 3, 4, 5]
+
+https://launchschool.com/books/ruby/read/arrays#each_with_index 
+each_with_index
+Another useful method that works in a similar way to each_index is each_with_index.
+
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+=> [1, 2, 3, 4, 5]
+
+each_with_index gives us the ability to manipulate both the value and the index by passing in two parameters to the block of code. 
+The first is the value and the second is the index. You can then use them in the block.
