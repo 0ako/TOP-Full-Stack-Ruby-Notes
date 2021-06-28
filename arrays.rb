@@ -275,6 +275,7 @@ In order to get our array to print properly, Ruby is calling the to_s method on 
 
 UNSORTED METHODS BELOW - they are common array methods, should I put them under ITERATING OVER AN ARRAY?_______________________________
 
+EACH_INDEX
 https://launchschool.com/books/ruby/read/arrays#each_index
 The each_index method iterates through the array much like the each method, however the variable represents the index number as opposed to 
 the value at each index. It passes the index of the element into the block and you may do as you please with it. The original array is returned.
@@ -289,8 +290,8 @@ This is index 3
 This is index 4
 => [1, 2, 3, 4, 5]
 
+EACH_WITH_INDEX
 https://launchschool.com/books/ruby/read/arrays#each_with_index 
-each_with_index
 Another useful method that works in a similar way to each_index is each_with_index.
 
 irb: 001 > a = [1, 2, 3, 4, 5]
@@ -305,3 +306,107 @@ irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
 
 each_with_index gives us the ability to manipulate both the value and the index by passing in two parameters to the block of code. 
 The first is the value and the second is the index. You can then use them in the block.
+
+SORT
+https://launchschool.com/books/ruby/read/arrays#sort
+The sort method is a handy way to order an array. It returns a sorted array.
+
+irb :001 > a = [5, 3, 8, 2, 4, 1]
+=> [5, 3, 8, 2, 4, 1]
+irb :002 > a.sort
+=> [1, 2, 3, 4, 5, 8]
+Once again, test in irb to see if the sort method is destructive. (It's not, but test it out for yourself.) 
+We won't remind you to test this in the future, but when you see methods like this in the future, 
+ask yourself "is this method returning new data, or is the original data being modified?".
+
+PRODUCT
+https://launchschool.com/books/ruby/read/arrays#product
+The product method can be used to combine two arrays in an interesting way. 
+It returns an array that is a combination of all elements from all arrays.
+
+irb :001 > [1, 2, 3].product([4, 5])
+=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
+There are too many interesting methods to cover, but we wanted to give you a taste of the power of Ruby arrays and 
+the many handy methods that come built-in with Ruby.
+If you ever think "I want my array to...", there is probably a method that already does this. First, check the documentation.
+
+EACH vs MAP 
+https://launchschool.com/books/ruby/read/arrays#eachvsmap
+Just click the link
+
+EACH
+# each provides a simple way of iterating over a collection in Ruby and is more preferred to using the for loop. 
+# The each method works on objects that allow for iteration and is commonly used along with a block. 
+# If given a block, each runs the code in the block once for each element in the collection and returns the collection it was invoked on. 
+# If no block is given, it returns an Enumerator. Let's look at some simple examples:
+
+irb :001 > a = [1, 2, 3]
+irb :002 > a.each { |e| puts e }
+1
+2
+3
+=> [1, 2, 3]
+
+# The above shows the most common way of using each. We're iterating over each element on the array a and printing it out. 
+# Finally it returns [1, 2, 3].
+
+# We can also modify the elements in a and print them out:
+
+irb :003 > a = [1, 2, 3]
+irb :004 > a.each { |e| puts e + 2 }
+3
+4
+5
+=> [1, 2, 3]
+
+# Again, we print out the modified values and return the original collection a.
+
+# In this chapter, so far, we've been using curly brace blocks exclusively. Don't forget that you can also use do...end as well:
+
+irb :005 > a = [1, 2, 3]
+irb :006 > a.each do |e|
+irb :007 *   puts e + 2
+irb :008 * end
+3
+4
+5
+=> [1, 2, 3]
+
+# Here is a final example with no block; an Enumerator is returned:
+
+irb :009 > a = [1, 2, 3]
+irb :010 > a.each
+=> #<Enumerator: ...>
+
+MAP
+# map also works on objects that allow for iteration. Like each, when given a block it invokes the given block once for each element 
+# in the collection. Where it really differs from each is the returned value. 
+# map creates and returns a new array containing the values returned by the block. Let's see it in action:
+
+irb :011 > a = [1, 2, 3]
+irb :012 > a.map { |x| x**2 }
+=> [1, 4, 9]
+
+# We square each element in the block and create a new array containing the returned values by the block. Finally the new array is returned.
+
+# To really examine that map creates a new array consisting of the returned value of the block, let's see an example with map and puts:
+
+irb :013 > a = [1, 2, 3]
+irb :014 > a.map { |x| puts x**2 }
+=> [nil, nil, nil]
+
+# Because puts returns nil every time the block is invoked nil is returned which makes up the values in the newly created returned array.
+
+# Finally, if no block is given, map returns an Enumerator:
+
+irb :015 > a = [1, 2, 3]
+irb :016 > a.map
+=> #<Enumerator: ...>
+
+# each and map are important methods to know but can be quite confusing in the beginning. 
+# Another way to remember these methods: use each for iteration and map for transformation.
+
+SUMMARY
+# Arrays are an extremely valuable data set. They can be used to store many different kinds of data and you'll see them very often in the wild. 
+# Ruby's array class has lots of built-in methods that can be used to perform many of the daily functions that programmers use. 
+
